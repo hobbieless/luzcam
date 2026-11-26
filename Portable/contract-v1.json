@@ -1,0 +1,290 @@
+{
+  "aspectRatio" : [
+    16,
+    9
+  ],
+  "cameras" : [
+    {
+      "apertureBaseEV" : 1,
+      "detail" : "Visor óptico · espejo · dos cortinillas",
+      "fullApertures" : [
+        1.3999999999999999,
+        2,
+        2.7999999999999998,
+        4,
+        5.5999999999999996,
+        8,
+        11,
+        16
+      ],
+      "id" : 0,
+      "mechanicalShutter" : true,
+      "mirror" : true,
+      "name" : "Réflex",
+      "thirdApertures" : [
+        1.3999999999999999,
+        1.6000000000000001,
+        1.8,
+        2,
+        2.2000000000000002,
+        2.5,
+        2.7999999999999998,
+        3.2000000000000002,
+        3.5,
+        4,
+        4.5,
+        5,
+        5.5999999999999996,
+        6.2999999999999998,
+        7.0999999999999996,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        16
+      ]
+    },
+    {
+      "apertureBaseEV" : 1,
+      "detail" : "Visor electrónico · dos cortinillas",
+      "fullApertures" : [
+        1.3999999999999999,
+        2,
+        2.7999999999999998,
+        4,
+        5.5999999999999996,
+        8,
+        11,
+        16
+      ],
+      "id" : 1,
+      "mechanicalShutter" : true,
+      "mirror" : false,
+      "name" : "Sin espejo",
+      "thirdApertures" : [
+        1.3999999999999999,
+        1.6000000000000001,
+        1.8,
+        2,
+        2.2000000000000002,
+        2.5,
+        2.7999999999999998,
+        3.2000000000000002,
+        3.5,
+        4,
+        4.5,
+        5,
+        5.5999999999999996,
+        6.2999999999999998,
+        7.0999999999999996,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        16
+      ]
+    },
+    {
+      "apertureBaseEV" : 3,
+      "detail" : "Pantalla · objetivo integrado · obturación electrónica",
+      "fullApertures" : [
+        2.7999999999999998,
+        4,
+        5.5999999999999996,
+        8,
+        11
+      ],
+      "id" : 2,
+      "mechanicalShutter" : false,
+      "mirror" : false,
+      "name" : "Compacta",
+      "thirdApertures" : [
+        2.7999999999999998,
+        3.2000000000000002,
+        3.5,
+        4,
+        4.5,
+        5,
+        5.5999999999999996,
+        6.2999999999999998,
+        7.0999999999999996,
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  ],
+  "designSize" : [
+    1600,
+    900
+  ],
+  "formulas" : {
+    "d" : "thirds ? 3 : 1",
+    "gainEV" : "i\/d",
+    "meterFraction" : "(clamp(meterThird,-6,6)+6)\/12",
+    "meterThird" : "(referenceEV-apertureBaseEV)*3 + (i-a-s)*(thirds ? 1 : 3)",
+    "offsetEV" : "meterThird\/3",
+    "opticalF" : "2^((apertureBaseEV + a\/d)\/2)",
+    "seconds" : "2^(-s\/d)"
+  },
+  "fullISOs" : [
+    100,
+    200,
+    400,
+    800,
+    1600,
+    3200
+  ],
+  "fullShutterLabels" : [
+    "1 s",
+    "1\/2 s",
+    "1\/4 s",
+    "1\/8 s",
+    "1\/15 s",
+    "1\/30 s",
+    "1\/60 s",
+    "1\/125 s",
+    "1\/250 s",
+    "1\/500 s",
+    "1\/1000 s"
+  ],
+  "lights" : [
+    {
+      "id" : 0,
+      "name" : "Día",
+      "referenceEV" : 10
+    },
+    {
+      "id" : 1,
+      "name" : "Atardecer",
+      "referenceEV" : 7
+    },
+    {
+      "id" : 2,
+      "name" : "Noche",
+      "referenceEV" : 4
+    }
+  ],
+  "meterRangeThirds" : [
+    -6,
+    6
+  ],
+  "meterTicks" : [
+    {
+      "fraction" : 0,
+      "third" : -6
+    },
+    {
+      "fraction" : 0.083333333333333329,
+      "third" : -5
+    },
+    {
+      "fraction" : 0.16666666666666666,
+      "third" : -4
+    },
+    {
+      "fraction" : 0.25,
+      "third" : -3
+    },
+    {
+      "fraction" : 0.33333333333333331,
+      "third" : -2
+    },
+    {
+      "fraction" : 0.41666666666666669,
+      "third" : -1
+    },
+    {
+      "fraction" : 0.5,
+      "third" : 0
+    },
+    {
+      "fraction" : 0.58333333333333337,
+      "third" : 1
+    },
+    {
+      "fraction" : 0.66666666666666663,
+      "third" : 2
+    },
+    {
+      "fraction" : 0.75,
+      "third" : 3
+    },
+    {
+      "fraction" : 0.83333333333333337,
+      "third" : 4
+    },
+    {
+      "fraction" : 0.91666666666666663,
+      "third" : 5
+    },
+    {
+      "fraction" : 1,
+      "third" : 6
+    }
+  ],
+  "resourceFolders" : [
+    "Catalogue",
+    "CatalogueThirds",
+    "CameraArt",
+    "Movies"
+  ],
+  "schema" : 1,
+  "startupWidth" : 1080,
+  "thirdISOs" : [
+    100,
+    125,
+    160,
+    200,
+    250,
+    320,
+    400,
+    500,
+    640,
+    800,
+    1000,
+    1250,
+    1600,
+    2000,
+    2500,
+    3200
+  ],
+  "thirdShutterLabels" : [
+    "1 s",
+    "0,8 s",
+    "0,6 s",
+    "1\/2 s",
+    "0,4 s",
+    "0,3 s",
+    "1\/4 s",
+    "1\/5 s",
+    "1\/6 s",
+    "1\/8 s",
+    "1\/10 s",
+    "1\/13 s",
+    "1\/15 s",
+    "1\/20 s",
+    "1\/25 s",
+    "1\/30 s",
+    "1\/40 s",
+    "1\/50 s",
+    "1\/60 s",
+    "1\/80 s",
+    "1\/100 s",
+    "1\/125 s",
+    "1\/160 s",
+    "1\/200 s",
+    "1\/250 s",
+    "1\/320 s",
+    "1\/400 s",
+    "1\/500 s",
+    "1\/640 s",
+    "1\/800 s",
+    "1\/1000 s"
+  ]
+}

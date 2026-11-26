@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "files": [
+    "Portable/contract-v1.json",
+    "CameraArt/reflex-reviewed.jpg",
+    "CameraArt/reflex-reviewed-geometry.json",
+    "CameraArt/mirrorless-reviewed.jpg",
+    "CameraArt/mirrorless-reviewed-geometry.json",
+    "CameraArt/compact-reviewed.jpg",
+    "CameraArt/compact-reviewed-geometry.json",
+    "Scene/scene.json",
+    "Scene/day.png",
+    "Scene/day.mp4",
+    "Scene/day-motion.png",
+    "Scene/dusk.png",
+    "Scene/dusk.mp4",
+    "Scene/dusk-motion.png",
+    "Scene/night.png",
+    "Scene/night.mp4",
+    "Scene/night-motion.png",
+    "Scene/focus-motion.png"
+  ],
+  "excludedFromDelivery": [
+    "Design",
+    "Sources",
+    "Tests",
+    "Tools",
+    "Catalogue",
+    "CatalogueThirds",
+    "historical CameraArt plates",
+    "Portable/parity-v1.json"
+  ],
+  "offline": true
+}

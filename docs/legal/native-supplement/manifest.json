@@ -1,0 +1,23 @@
+{
+  "scope": "OpenSSL licence supplement for observed Windows Python/Qt package; not proof of Mac native versions",
+  "component": "OpenSSL",
+  "version": "3.5.8",
+  "observedVersion": "OpenSSL 3.5.8 25 Aug 2026",
+  "observedDllSha256": "068eff510340d7c4f3ed7fc065e3189cfa55647dac2289c5cbe2b2b68244dd94",
+  "files": [
+    {
+      "path": "OpenSSL-3.5.8-LICENSE.txt",
+      "source": "https://raw.githubusercontent.com/openssl/openssl/openssl-3.5.8/LICENSE.txt",
+      "sha256": "7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a",
+      "bytes": 10175
+    },
+    {
+      "path": "OpenSSL-3.5.8-README.md",
+      "source": "https://raw.githubusercontent.com/openssl/openssl/openssl-3.5.8/README.md",
+      "sha256": "f68c351048c11bd8499b9d6ef8b283386d4544cc556fd2679a2ff2b1c50a378b",
+      "bytes": 8137
+    }
+  ],
+  "noticeFileAtTag": "No root NOTICE or NOTICE.txt at inspected openssl-3.5.8 tag; LICENSE and README retained",
+  "reviewComplete": false
+}

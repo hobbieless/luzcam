@@ -1,0 +1,42 @@
+{
+  "revision": "lighting3d-v5",
+  "fps": 30,
+  "frames": 45,
+  "period": 1.5,
+  "lights": {
+    "day": {
+      "box": [
+        161,
+        122,
+        593,
+        540
+      ]
+    },
+    "dusk": {
+      "box": [
+        160,
+        124,
+        586,
+        540
+      ]
+    },
+    "night": {
+      "box": [
+        160,
+        206,
+        570,
+        535
+      ]
+    }
+  },
+  "focusMotion": {
+    "box": [
+      237,
+      207,
+      457,
+      385
+    ],
+    "file": "focus-motion.png",
+    "source": "Registered alpha of approved v5 3D beauty pass; identical geometry across all lights"
+  }
+}

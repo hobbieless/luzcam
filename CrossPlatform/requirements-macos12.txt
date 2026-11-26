@@ -1,0 +1,7 @@
+# Mac Apple Silicon compatibility profile for macOS 12 Monterey and later.
+# Application source and UI are unchanged from the shared Windows/Mac code.
+# Use Python 3.12.x, matching the recorded arm64 preview build.
+PySide6==6.8.3
+numpy==1.26.4
+Pillow==13.0.0
+PyInstaller==6.22.3

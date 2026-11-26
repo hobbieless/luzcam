@@ -1,0 +1,35 @@
+{
+  "retrieved": "2026-11-18",
+  "records": [
+    {
+      "file": "Qt-6.11.3-LGPL-3.0-only.txt",
+      "source": "https://raw.githubusercontent.com/qt/qtbase/v6.11.3/LICENSES/LGPL-3.0-only.txt",
+      "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768",
+      "bytes": 7651,
+      "downloaded": true
+    },
+    {
+      "file": "Qt-6.11.3-GPL-3.0-only.txt",
+      "source": "https://raw.githubusercontent.com/qt/qtbase/v6.11.3/LICENSES/GPL-3.0-only.txt",
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "bytes": 35147,
+      "downloaded": true
+    },
+    {
+      "file": "FFmpeg-7.1.5-LGPL-2.1.txt",
+      "source": "https://raw.githubusercontent.com/FFmpeg/FFmpeg/n7.1.5/COPYING.LGPLv2.1",
+      "sha256": "246041b6ecf9bc32d718a62c57877c78b5eb397b6467e74ed7ae2626ab189c30",
+      "bytes": 26517,
+      "downloaded": true
+    },
+    {
+      "file": "FFmpeg-7.1.5-LICENSE.md",
+      "source": "https://raw.githubusercontent.com/FFmpeg/FFmpeg/n7.1.5/LICENSE.md",
+      "sha256": "cb48bf09a11f5fb576cddb0431c8f5ed0a60157a9ec942adffc13907cbe083f2",
+      "bytes": 4376,
+      "downloaded": true
+    }
+  ],
+  "completeLegalReview": false,
+  "note": "Exact tag licence texts only; not a complete native SBOM, dependency source archive or legal clearance."
+}

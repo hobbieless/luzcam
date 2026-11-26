@@ -1,0 +1,9 @@
+# Preserve upstream notice bytes; their manifests contain exact SHA256 hashes.
+docs/legal/licencias-base/** -text
+docs/legal/qt-native-notices-*/** -text
+docs/legal/native-supplement/** -text
+# Build provenance hashes raw input bytes. Preserve those bytes on both OSes.
+CrossPlatform/** -text
+COPYRIGHT.md -text
+CREDITS.md -text
+Tools/recopilar-licencias.py -text

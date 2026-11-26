@@ -1,0 +1,14 @@
+{
+  "product": "LuzCam",
+  "version": "0.12.5",
+  "windowsVersion": [
+    0,
+    12,
+    5,
+    0
+  ],
+  "publisher": "César González",
+  "brand": "Hobbieless",
+  "edition": "Free",
+  "channel": "Microsoft Store"
+}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1e8">
+  <meta name="description" content="Explora cómo la luz atraviesa una cámara y aprende fotografía manual con LuzCam.">
+  <title>LuzCam · El instante, por dentro</title>
+  <link rel="icon" href="../CrossPlatform/luzcam/icons/luzcam.png">
+  <link rel="stylesheet" href="app.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="LuzCam, inicio"><span class="brand-mark">L</span><span>LUZ<span class="brand-slash"> / </span>CÁMARA</span></a>
+      <div class="top-actions"><span class="offline"><i aria-hidden="true"></i><span id="offlineStatus" data-t="offline">Funciona en este dispositivo</span></span><label class="language"><span class="sr-only" data-t="language">Idioma</span><select id="language" aria-label="Idioma"><option value="es">ES</option><option value="en">EN</option></select></label></div>
+    </header>
+
+    <section class="intro"><div><p class="eyebrow" data-t="eyebrow">FOTOGRAFÍA · MODO MANUAL</p><h1 data-t="title">El instante,<br>por dentro.</h1><p class="intro-copy" data-t="intro">Observa la luz. Ajusta la cámara. Predice qué ocurrirá al disparar.</p></div><div class="intro-note"><span class="note-icon">✳</span><span data-t="slow">El disparo se ralentiza para explicar cada fase.</span></div></section>
+
+    <section class="workbench" aria-label="Simulador LuzCam">
+      <div class="visual-column">
+        <article class="card camera-card">
+          <div class="card-heading"><div><p class="eyebrow" data-t="inside">LA CÁMARA, POR DENTRO</p><h2 id="cameraTitle">Réflex</h2></div><div class="camera-picker" role="group" aria-label="Seleccionar cámara"><button class="camera-choice active" data-camera="0" aria-label="Réflex" aria-pressed="true" title="Réflex"><svg viewBox="0 0 32 24" aria-hidden="true"><path d="M3 7h6l2-3h9l3 3h6a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/><path d="M11 7 13 3h8l3 4"/><circle cx="16" cy="13.5" r="5.5"/><circle cx="16" cy="13.5" r="2.3"/><path d="M4 10h3"/></svg><span class="sr-only">Réflex</span></button><button class="camera-choice" data-camera="1" aria-label="Sin espejo" aria-pressed="false" title="Sin espejo"><svg viewBox="0 0 32 24" aria-hidden="true"><path d="M3 7h6l2-2h10l2 2h6a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/><path d="M13 5V3h6v2"/><circle cx="16" cy="13.5" r="5.5"/><circle cx="16" cy="13.5" r="2.3"/></svg><span class="sr-only">Sin espejo</span></button><button class="camera-choice" data-camera="2" aria-label="Compacta" aria-pressed="false" title="Compacta"><svg viewBox="0 0 32 24" aria-hidden="true"><path d="M3 6h5l2-3h12l2 3h5a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"/><circle cx="16" cy="13" r="6.5"/><circle cx="16" cy="13" r="3"/><circle cx="26" cy="9" r="1"/></svg><span class="sr-only">Compacta</span></button></div></div>
+          <div class="camera-stage"><canvas id="cameraCanvas" role="img" aria-label="Corte animado de la cámara y recorrido de la luz"></canvas><div class="phase-chip" id="phaseChip">Preparar la cámara</div><div class="camera-stage-tools"><div class="meter"><span class="eyebrow sr-only" data-t="meter">FOTÓMETRO</span><div class="meter-track"><span class="meter-edge" id="meterLeftEdge" aria-hidden="true">−</span><div class="meter-line" id="meterLine" role="meter" aria-label="Fotómetro" aria-valuemin="-2" aria-valuemax="2" aria-valuenow="0"><svg class="meter-scale" viewBox="0 0 240 32" preserveAspectRatio="none" aria-hidden="true"><g class="meter-scale-labels"><text x="8" y="10">2</text><text x="64" y="10">1</text><text x="120" y="10">0</text><text x="176" y="10">1</text><text x="232" y="10">2</text></g><path class="meter-axis" d="M8 18H232"/><path class="meter-ticks" d="M8 15v8 M26.67 18v5 M45.33 18v5 M64 15v8 M82.67 18v5 M101.33 18v5 M120 13v10 M138.67 18v5 M157.33 18v5 M176 15v8 M194.67 18v5 M213.33 18v5 M232 15v8"/></svg><i id="meterNeedle" aria-hidden="true"></i></div><span class="meter-edge" id="meterRightEdge" aria-hidden="true">+</span></div><p id="meterText" class="sr-only" aria-live="polite">Exposición de referencia</p></div><div class="shutter-tools"><button id="play" class="shutter-button" aria-label="Disparar" title="Disparar"><span id="playGlyph" aria-hidden="true"></span></button><label class="step-toggle"><input id="stepByStep" type="checkbox" checked><span data-t="stepByStep">Paso a paso</span></label></div></div>
+          <div class="mechanism-strip" id="mechanismPreview" aria-label="Mecanismos de la cámara" aria-hidden="true">
+            <div class="mechanism-item"><canvas id="irisMechanism" width="220" height="170" role="img" aria-label="Mecanismo del diafragma"></canvas><div class="mechanism-reading"><span data-t="aperture">DIAFRAGMA</span><strong id="mechanismApertureValue">f/4</strong></div></div>
+            <div class="mechanism-item"><canvas id="shutterMechanism" width="220" height="170" role="img" aria-label="Mecanismo del obturador"></canvas><div class="mechanism-reading"><span id="shutterMechanismTitle" data-t="shutter">VELOCIDAD</span><strong id="mechanismShutterValue">1/125 s</strong></div></div>
+            <div class="mechanism-item"><canvas id="sensitivityMechanism" width="220" height="170" role="img" aria-label="Gráfico de sensibilidad y ruido"></canvas><div class="mechanism-reading"><span data-t="iso">SENSIBILIDAD</span><strong id="mechanismSensitivityValue">ISO 100</strong><small data-t="noise">Ruido</small></div></div>
+          </div><div class="phase-row"><p id="phaseDescription" aria-live="polite" aria-atomic="true">La luz llega al espejo y sube al visor óptico.</p><div class="phase-controls"><button id="previous" class="icon-button" aria-label="Paso anterior" title="Paso anterior">‹</button><button id="next" class="icon-button" aria-label="Siguiente paso" title="Siguiente paso">›</button></div></div></div>
+        </article>
+
+        <article class="card settings-card">
+          <div class="settings-title"><div><p class="eyebrow" data-t="settings">AJUSTES MANUALES</p></div><label class="thirds-toggle"><input id="thirds" type="checkbox"><span data-t="thirds">Pasos de ⅓ EV</span></label></div>
+          <div class="control-grid">
+            <label class="control"><span class="control-label"><span class="control-icon" aria-hidden="true"><svg viewBox="0 0 28 28"><path d="M14 14 8 4a12 12 0 0 1 12 0Z"/><path d="M14 14 20 4a12 12 0 0 1 6 10Z"/><path d="M14 14 26 14a12 12 0 0 1-6 10Z"/><path d="M14 14 20 24a12 12 0 0 1-12 0Z"/><path d="M14 14 8 24a12 12 0 0 1-6-10Z"/><path d="M14 14 2 14A12 12 0 0 1 8 4Z"/><circle cx="14" cy="14" r="3"/></svg></span><span class="sr-only" data-t="aperture">DIAFRAGMA</span><strong id="apertureValue">f/4</strong></span><input id="aperture" type="range" min="0" max="8" value="3"><span class="range-ends"><span id="apertureMin">f/1.4</span><span id="apertureMax">f/22</span></span></label>
+            <label class="control"><span class="control-label"><span class="control-icon" aria-hidden="true"><svg viewBox="0 0 28 28"><circle cx="14" cy="14" r="10"/><path d="M14 7v7l5 3"/><path d="M14 1v3M14 24v3M1 14h3M24 14h3"/></svg></span><span class="sr-only" data-t="shutter">VELOCIDAD</span><strong id="shutterValue">1/125 s</strong></span><input id="shutter" type="range" min="0" max="12" value="8"><span class="range-ends"><span>2 s</span><span>1/2000 s</span></span></label>
+            <label class="control"><span class="control-label"><span class="control-icon" aria-hidden="true"><svg viewBox="0 0 28 28"><circle cx="14" cy="14" r="5"/><path d="M14 1v4M14 23v4M1 14h4M23 14h4M4.8 4.8l2.9 2.9m12.6 12.6 2.9 2.9m0-18.4-2.9 2.9M7.7 20.3l-2.9 2.9"/></svg></span><span class="sr-only" data-t="iso">SENSIBILIDAD</span><strong id="isoValue">ISO 100</strong></span><input id="iso" type="range" min="0" max="7" value="0"><span class="range-ends"><span>100</span><span>12800</span></span></label>
+          </div>
+        </article>
+      </div>
+
+      <div class="scene-column">
+        <article class="card scene-card">
+          <div class="card-heading"><div><p class="eyebrow" id="sceneMode" data-t="sceneLabel">ESCENA / VISOR</p><h2 data-t="sceneTitle">El taller del tiempo</h2></div><button class="quiet-button" id="returnScene" hidden data-t="returnScene">Volver a escena</button></div>
+          <div class="light-tabs" role="group" aria-label="Iluminación"><button class="light-tab active" data-light="0" aria-label="Día" title="Día"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4.2 4.2l2.1 2.1m11.4 11.4 2.1 2.1m0-15.6-2.1 2.1M6.3 17.7l-2.1 2.1"/></svg><span class="sr-only">Día</span></button><button class="light-tab" data-light="1" aria-label="Atardecer" title="Atardecer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17h18M5 21h14M12 3v2m-8 5h2m12 0h2M5.5 5.5 7 7m12-1.5L17.5 7"/><path d="M5 17a7 7 0 0 1 14 0"/></svg><span class="sr-only">Atardecer</span></button><button class="light-tab" data-light="2" aria-label="Noche" title="Noche"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 15.6A8.8 8.8 0 0 1 8.4 3.5 9 9 0 1 0 20.5 15.6Z"/><path d="m17 4 .5 1.5L19 6l-1.5.5L17 8l-.5-1.5L15 6l1.5-.5Z"/></svg><span class="sr-only">Noche</span></button></div>
+          <div class="scene-frame"><video id="sceneVideo" muted playsinline loop preload="metadata" poster="../Scene/day.png" aria-label="Escena del taller en movimiento"></video><button class="quiet-button motion-toggle scene-motion-toggle" id="motionToggle" aria-label="Pausar movimiento" aria-pressed="false" title="Pausar movimiento"><svg class="motion-pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg><svg class="motion-play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7z"/></svg><span class="sr-only motion-label" data-t="pauseMotion">Pausar movimiento</span></button><img id="reviewPhoto" class="review-photo" alt="Fotografía capturada" hidden><div class="scene-badge" id="sceneBadge">DÍA</div></div>
+          <div class="scene-caption"><span class="sun-symbol">☼</span><p data-t="sceneHint">Observa el péndulo, predice el resultado y dispara.</p></div>
+        </article>
+
+        <article class="card roll-card"><div class="roll-heading"><div><p class="eyebrow" data-t="roll">CARRETE</p><strong id="rollCount" aria-live="polite" aria-atomic="true">0 / 100</strong></div><button class="quiet-button icon-action" id="clearRoll" aria-label="Vaciar carrete" title="Vaciar carrete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M9 6V4h6v2m4 0-1 14H6L5 6m4 3v8m6-8v8"/></svg><span class="sr-only">Vaciar carrete</span></button></div><div id="rollGrid" class="roll-grid"><div class="empty-roll"><span aria-hidden="true">⌁</span><p data-t="empty">Las fotografías aparecerán aquí después del disparo.</p></div></div></article>
+      </div>
+    </section>
+
+    <footer><span data-t="footer">LuzCam · Modelos didácticos · Uso educativo</span><span class="footer-mark">HOBBIELESS</span></footer>
+  </main>
+</body>
+</html>
