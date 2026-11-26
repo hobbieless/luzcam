@@ -22,9 +22,16 @@ for name in ['PySide6','PySide6_Essentials','PySide6_Addons','shiboken6','numpy'
                       'scope':'build/bootloader' if name=='PyInstaller' else 'runtime'})
 for source in (ROOT/'CrossPlatform/luzcam/fonts').glob('*OFL.txt'):
     target=out/'fonts'/source.name;target.parent.mkdir(exist_ok=True);shutil.copy2(source,target)
-for name in ('LICENSE.txt','LICENSE'):
-    source=Path(sys.base_prefix)/name
-    if source.is_file():shutil.copy2(source,out/'PYTHON-LICENSE.txt');break
+python_roots=[Path(sys.base_prefix),Path(sys.executable).resolve(),*Path(sys.executable).resolve().parents]
+seen=set()
+for base in python_roots:
+    if base in seen:continue
+    seen.add(base)
+    for name in ('LICENSE.txt','LICENSE'):
+        source=base/name
+        if source.is_file():
+            shutil.copy2(source,out/'PYTHON-LICENSE.txt');break
+    if (out/'PYTHON-LICENSE.txt').is_file():break
 # Include the exact, previously reviewed tag texts instead of leaving them
 # only in the development repository. They are not a native dependency SBOM.
 base=ROOT/'docs/legal/licencias-base'
